@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="795.0" prefWidth="1136.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeScreenController">
+   <TableView fx:id="appointmentsTable" layoutX="48.0" layoutY="547.0" prefHeight="200.0" prefWidth="1037.0">
+      <columns>
+         <TableColumn fx:id="appIDCol" prefWidth="39.0" text="ID" />
+         <TableColumn fx:id="appTitleCol" prefWidth="111.0" text="Title" />
+         <TableColumn fx:id="appDescCol" prefWidth="95.0" text="Description" />
+         <TableColumn fx:id="appLocCol" prefWidth="100.0" text="Location" />
+         <TableColumn fx:id="appTypeCol" prefWidth="108.0" text="Type" />
+         <TableColumn fx:id="appStartCol" minWidth="0.0" prefWidth="162.0" text="Start" />
+         <TableColumn fx:id="appEndCol" prefWidth="163.0" text="End" />
+         <TableColumn fx:id="appCustIDCol" prefWidth="103.0" text="Customer ID" />
+         <TableColumn fx:id="appUserIDCol" prefWidth="79.0" text="User ID" />
+         <TableColumn fx:id="appContactIDCol" prefWidth="76.0" text="Contact ID" />
+      </columns>
+   </TableView>
+   <Button layoutX="50.0" layoutY="152.0" mnemonicParsing="false" onAction="#addCustomer" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #302D30;" text="Add" textFill="WHITE">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <Button layoutX="161.0" layoutY="152.0" mnemonicParsing="false" onAction="#switchToUpdateCustomer" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #302D30;" text="Update" textFill="WHITE">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <Button layoutX="272.0" layoutY="152.0" mnemonicParsing="false" onAction="#removeCustomer" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #302D30;" text="Remove" textFill="WHITE">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <Button layoutX="48.0" layoutY="507.0" mnemonicParsing="false" onAction="#addAppointment" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #302D30;" text="Add" textFill="WHITE">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <Button layoutX="163.0" layoutY="507.0" mnemonicParsing="false" onAction="#updateAppointment" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #302D30;" text="Update" textFill="WHITE">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <Button fx:id="removeApp" layoutX="271.0" layoutY="507.0" mnemonicParsing="false" onAction="#removeAppointment" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #302D30;" text="Remove" textFill="WHITE">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <RadioButton fx:id="weekViewRB" layoutX="532.0" layoutY="512.0" mnemonicParsing="false" text="Week">
+      <toggleGroup>
+         <ToggleGroup fx:id="viewBy" />
+      </toggleGroup>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </RadioButton>
+   <RadioButton fx:id="monthViewRB" layoutX="663.0" layoutY="512.0" mnemonicParsing="false" text="Month" toggleGroup="$viewBy">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></RadioButton>
+   <RadioButton fx:id="allViewRB" layoutX="417.0" layoutY="512.0" mnemonicParsing="false" selected="true" text="All" toggleGroup="$viewBy">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></RadioButton>
+   <Text layoutX="48.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Text>
+   <Button layoutX="996.0" layoutY="62.0" mnemonicParsing="false" onAction="#logOut" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #302D30;" text="Log Out" textFill="WHITE">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <TableView fx:id="customerTable" layoutX="48.0" layoutY="206.0" prefHeight="217.0" prefWidth="1037.0">
+      <columns>
+         <TableColumn fx:id="customerIDCol" prefWidth="75.0" text="Customer ID" />
+         <TableColumn fx:id="customerNameCol" prefWidth="115.0" text="Customer Name" />
+         <TableColumn fx:id="customerAddressCol" prefWidth="133.0" text="Address" />
+         <TableColumn fx:id="customerPCCol" prefWidth="105.0" text="Postal Code" />
+         <TableColumn fx:id="customerPhoneCol" prefWidth="105.0" text="Phone" />
+         <TableColumn fx:id="customerCDCol" prefWidth="97.0" text="Created Date" />
+         <TableColumn fx:id="customerCBCol" prefWidth="104.0" text="Created By" />
+         <TableColumn fx:id="customerLUCol" prefWidth="96.0" text="Last Update" />
+         <TableColumn fx:id="customerLUBCol" prefWidth="95.0" text="Last Updated By" />
+         <TableColumn fx:id="customerDivIDCol" prefWidth="56.0" text="Division" />
+         <TableColumn fx:id="customerCountryCol" prefWidth="56.0" text="Country" />
+      </columns>
+   </TableView>
+   <Text layoutX="50.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Text>
+   <Label fx:id="nameLabel" layoutX="48.0" layoutY="20.0" text="Currently logged in as: ">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Button fx:id="reportsBtn" layoutX="50.0" layoutY="62.0" mnemonicParsing="false" onAction="#openReports" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: green;" text="Reports" textFill="WHITE">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
+   <StackPane prefHeight="60.0" prefWidth="1136.0">
+      <children>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scheduling Solutions">
+            <font>
+               <Font name="Segoe UI Bold Italic" size="24.0" />
+            </font>
+         </Text>
+      </children>
+   </StackPane>
+</AnchorPane>

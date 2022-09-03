@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0"
+            prefWidth="380.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.UpdateCustomerController">
+   <StackPane layoutY="17.0" prefHeight="25.0" prefWidth="380.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scheduling Solutions">
+         <font>
+            <Font name="Segoe UI Italic" size="24.4"/>
+         </font>
+      </Text>
+   </StackPane>
+   <StackPane layoutY="65.0" prefHeight="25.0" prefWidth="380.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Update Customer">
+         <font>
+            <Font name="System Bold" size="23.0"/>
+         </font>
+      </Text>
+   </StackPane>
+   <StackPane layoutX="70.0" layoutY="520.0" prefHeight="40.0" prefWidth="120.0"/>
+   <StackPane layoutX="-349.0" layoutY="-98.0" prefHeight="40.0" prefWidth="380.0"/>
+   <StackPane layoutX="-2.0" layoutY="145.0" prefHeight="40.0" prefWidth="380.0">
+      <TextField fx:id="customerNameTxt" maxWidth="-Infinity" prefHeight="25.0" prefWidth="250.0"
+                 promptText="Customer Name"/>
+   </StackPane>
+   <StackPane layoutX="-2.0" layoutY="210.0" prefHeight="40.0" prefWidth="380.0">
+      <TextField fx:id="customerAddressTxt" maxWidth="-Infinity" prefHeight="25.0" prefWidth="250.0"
+                 promptText="Customer Address"/>
+   </StackPane>
+   <StackPane layoutX="-2.0" layoutY="275.0" prefHeight="40.0" prefWidth="380.0">
+      <TextField fx:id="customerPCTxt" maxWidth="-Infinity" prefHeight="25.0" prefWidth="250.0"
+                 promptText="Customer Postal Code"/>
+   </StackPane>
+   <StackPane layoutX="-2.0" layoutY="340.0" prefHeight="40.0" prefWidth="380.0">
+      <TextField fx:id="customerPhoneTxt" maxWidth="-Infinity" prefHeight="25.0" prefWidth="250.0"
+                 promptText="Customer Phone"/>
+   </StackPane>
+   <StackPane layoutX="-2.0" layoutY="405.0" prefHeight="40.0" prefWidth="380.0">
+      <ComboBox fx:id="countryComboBox" maxWidth="-Infinity" onAction="#showDivisions" prefHeight="25.0"
+                prefWidth="250.0" promptText="Country"/>
+   </StackPane>
+   <Button layoutX="32.0" layoutY="558.0" mnemonicParsing="false" onAction="#updateCustomer" prefHeight="30.0"
+           prefWidth="150.0" style="-fx-background-color: #302D30;" text="Save" textFill="WHITE">
+      <font>
+         <Font size="16.0"/>
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+   </Button>
+   <Button layoutX="197.0" layoutY="558.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="30.0"
+           prefWidth="150.0" style="-fx-background-color: #302D30;" text="Cancel" textFill="WHITE">
+      <font>
+         <Font size="16.0"/>
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+   </Button>
+   <Text layoutX="64.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter customer name:"/>
+   <Text layoutX="64.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter customer address:"/>
+   <Text layoutX="64.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter customer postal code:"/>
+   <Text layoutX="64.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter customer phone number:"/>
+   <Text layoutX="64.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select customer country:"/>
+   <ComboBox fx:id="divisionIDComboBox" disable="true" layoutX="245.0" layoutY="478.0" maxWidth="-Infinity"
+             prefHeight="25.0" prefWidth="68.0" promptText="ID" style="-fx-opacity: .75;"/>
+   <ComboBox fx:id="divisionComboBox" disable="true" layoutX="63.0" layoutY="478.0" maxWidth="-Infinity"
+             onAction="#showIDs" prefHeight="25.0" prefWidth="177.0" promptText="Division" style="-fx-opacity: .75;"/>
+   <Text layoutX="64.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select customer division:"/>
+</AnchorPane>
