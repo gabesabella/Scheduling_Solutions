@@ -1,4 +1,4 @@
-<h1>Scheduling Solutions</h1>
+<h1>C191</h1>
 
 <h2>Purpose</h2>
 <p>Scheduling Solutions is an appointment management application that enables users to create and manage appointments of customers from different time zones. The application uses username and password authentication for logging in and an SQL database for storage. It also includes automatic French language support based on user location.</p>
